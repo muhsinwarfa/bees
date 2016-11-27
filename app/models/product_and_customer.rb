@@ -1,0 +1,2 @@
+class ProductAndCustomer < ApplicationRecord
+end

@@ -1,11 +1,16 @@
 <h3>Welcome</h3>
+<h1>This is where to put the customer pages</h1>
 <% if user_signed_in? %>
   <% if current_user.admin? %>
     <h3>Admin</h3>
     <p><%= link_to 'User count:', users_path %> <%= User.count %></p>
   <% else %>
-    <h3>You've signed up. Download a free book.</h3>
-    <%= link_to 'Download PDF', products_path('product.pdf'), class: 'btn btn-success btn-large' %>
+    <h3>You've signed up.Click to go to products path.</h3>
+    <%= link_to 'Products', products_path, class: 'btn btn-success btn-large' %>
+    <h3>You've signed up.Click to go to customers path.</h3>
+    <%= link_to 'Customers', customers_path, class: 'btn btn-success btn-large' %>
+    <h3>You've signed up.Click to go to Orders path.</h3>
+    <%= link_to 'Order', orders_path, class: 'btn btn-success btn-large' %>
   <% end %>
 <% else %>
   <h3>Sign up and download a free book.</h3>
