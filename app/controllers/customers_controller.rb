@@ -5,6 +5,10 @@ class CustomersController < ApplicationController
   # GET /customers.json
   def index
     @customers = Customer.all
+    @hash = Gmaps4rails.build_markers(@customers) do |customer, marker|
+    marker.lat customer.latitude
+    marker.lng customer.longitude
+end
   end
 
   # GET /customers/1

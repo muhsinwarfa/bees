@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '~> 2.3.0'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -26,6 +26,13 @@ gem 'gibbon'
 gem 'high_voltage'
 gem 'sucker_punch'
 gem 'therubyracer', :platform=>:ruby
+gem 'rspec-rails'
+gem 'guard-bundler'
+gem 'guard-rspec'
+gem 'capybara'
+gem 'geocoder'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
