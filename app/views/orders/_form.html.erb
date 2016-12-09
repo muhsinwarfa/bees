@@ -11,15 +11,32 @@
     </div>
   <% end %>
 
+
+
   <div class="field">
-    <%= f.label :product_id %>
-    <%= f.number_field :product_id %>
+    <%= f.label :customer_name %>
+    <%= f.text_field :customer_name %>
   </div>
 
   <div class="field">
-    <%= f.label :customer_id %>
-    <%= f.number_field :customer_id %>
+    <%= f.label :customer_number %>
+    <%= f.text_field :customer_number %>
   </div>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </div>
+  
+
+<div class="field">
+    <%= f.label :order_size %><br />
+    <%= f.label :order_size, "Big", :value => "Big"  %>
+    <%= f.radio_button :order_size, "Big" %>
+    <%= f.label :order_size, "Small", :value => "small" %>
+    <%= f.radio_button :order_size, "Small" %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit %>
