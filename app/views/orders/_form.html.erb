@@ -1,3 +1,8 @@
+<div class="orderform">
+  
+  
+
+
 <%= form_for(order) do |f| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
@@ -27,18 +32,64 @@
     <%= f.label :address %>
     <%= f.text_area :address %>
   </div>
-  
 
 <div class="field">
-    <%= f.label :order_size %><br />
+    <%= f.label :order_size %>
     <%= f.label :order_size, "Big", :value => "Big"  %>
     <%= f.radio_button :order_size, "Big" %>
     <%= f.label :order_size, "Small", :value => "small" %>
     <%= f.radio_button :order_size, "Small" %>
   </div>
-
+  
+  <div class="field">
+    <%= f.label 'Vehicle ID' %>
+    <%= f.text_field :vehicles_id %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+</div>
+ <div class="table">
+    
+    <div class="row header">
+      <div class="cell">
+        ID
+      </div>
+      <div class="cell">
+        Driver Name
+      </div>
+      <div class="cell">
+        Car Type
+      </div>
+      <div class="cell">
+        Distance
+      </div>
+      <div class="cell">
+        Queue
+      </div>
+    </div>
+    
+    <% @vehicles.each do |vehicle| %>
+    
+      <div class="row">
+        <div class="cell">
+          <%= vehicle.id %>
+        </div>
+        <div class="cell">
+          <%= vehicle.driverName %>
+        </div>
+        <div class="cell">
+          <%= vehicle.carType %>
+        </div>
+        <div class="cell">
+          <%= vehicle.distance %>
+        </div>
+        <div class="cell">
+          <%= vehicle.queue %>
+        </div>
+      </div>
+    <% end %>
+</div>

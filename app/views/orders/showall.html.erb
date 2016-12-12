@@ -1,0 +1,57 @@
+
+<h1>Orders</h1>
+
+
+
+ <div class="table">
+    
+    <div class="row header">
+      <div class="cell">
+        Product
+      </div>
+      <div class="cell">
+        Customer
+      </div>
+      <div class="cell">
+        Order size
+      </div>
+      <div class="cell">
+        address
+      </div>
+    </div>
+    
+    <% @orders.each do |order| %>
+    
+      <div class="row">
+        <div class="cell">
+          <%= order.customer_name %>
+        </div>
+        <div class="cell">
+          <%= order.customer_number %>
+        </div>
+        <div class="cell">
+          <%= order.order_size %>
+        </div>
+        <div class="cell">
+          <%= order.address %>
+        </div>
+        
+        <div class="cell">
+          <%= link_to 'Show', order %>
+        </div>
+        <div class="cell">
+          <%= link_to 'Edit', edit_order_path(order) %>
+        </div>
+        <div class="cell">
+          <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    <% end %>
+
+
+</div>
+<div class= "backbuttondiv">
+    <br>
+    <%= link_to 'Back', orders_path,class: "backbuttn"%>
+    
+</div>

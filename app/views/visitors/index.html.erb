@@ -1,18 +1,15 @@
-<h3>Welcome</h3>
-<h1>This is where to put the customer pages</h1>
+
 <% if user_signed_in? %>
   <% if current_user.admin? %>
     <h3>Admin</h3>
     <p><%= link_to 'User count:', users_path %> <%= User.count %></p>
   <% else %>
-    <h3>You've signed up.Click to go to products path.</h3>
-    <%= link_to 'Products', products_path, class: 'btn btn-success btn-large' %>
-    <h3>You've signed up.Click to go to customers path.</h3>
-    <%= link_to 'Customers', customers_path, class: 'btn btn-success btn-large' %>
-    <h3>You've signed up.Click to go to Orders path.</h3>
-    <%= link_to 'Order', orders_path, class: 'btn btn-success btn-large' %>
+    <h3>Welcome to the Bees Delivery Web App. Click on Orders to get started.</h3>
+    <%= link_to 'Orders', orders_path, id: 'ordersbutton'  %>
   <% end %>
 <% else %>
-  <h3>Sign up and download a free book.</h3>
-  <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary btn-large' %>
+  <h1 style = "text-align: center; margin-top: 100px;">Welcome to the Bees Delivery Web Application</h1>
+  <h2 style = "text-align: center;margin-bottom: 42px;">Sign in or Sign up to get started</h2>
+  <%= link_to 'Sign up', new_user_registration_path, id: 'backbuttondiv' %>
+  <%= link_to 'Sign in', new_user_session_path,class: "signinn", id: 'backbuttondiv' %>
 <% end %>

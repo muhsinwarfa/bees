@@ -5,26 +5,46 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+    
   end
+  
+  
+ 
+  def showall
+    @orders = Order.all
+  end
+  
+
+
+
 
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
+    @map_hash = Gmaps4rails.build_markers(@order) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+      print "I am here!!!"
+    end
   end
 
   # GET /orders/new
   def new
     @order = Order.new
+    @vehicles = Vehicle.all
   end
 
   # GET /orders/1/edit
   def edit
+    @vehicles = Vehicle.all
   end
 
   # POST /orders
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    @vehicles = Vehicle.all
 
     respond_to do |format|
       if @order.save
@@ -40,6 +60,7 @@ class OrdersController < ApplicationController
   # PATCH/PUT /orders/1
   # PATCH/PUT /orders/1.json
   def update
+    @vehicles = Vehicle.all
     respond_to do |format|
       if @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
@@ -69,6 +90,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:product_id, :customer_id, :customer_name, :customer_number, :address,:order_size)
+      params.require(:order).permit(:product_id, :vehicles_id, :customer_name, :customer_number, :address,:order_size,:latitude,:longitude,:order_size)
     end
 end

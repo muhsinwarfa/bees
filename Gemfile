@@ -33,6 +33,10 @@ gem 'capybara'
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 group :development do
   gem 'better_errors'
   gem 'hub', :require=>nil
