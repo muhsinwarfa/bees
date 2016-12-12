@@ -25,7 +25,6 @@ class OrdersController < ApplicationController
     @map_hash = Gmaps4rails.build_markers(@order) do |user, marker|
       marker.lat user.latitude
       marker.lng user.longitude
-      print "I am here!!!"
     end
   end
 
