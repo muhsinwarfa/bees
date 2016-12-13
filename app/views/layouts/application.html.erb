@@ -9,12 +9,17 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+ 
+      
+    <!--<div id =  "backimage">-->
+    <!--   </div>-->
     <header>
       <div id= "mainnav">
         <%= render 'layouts/navigation' %>
       </div>
     </header>
     <main role="main">
+      
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
