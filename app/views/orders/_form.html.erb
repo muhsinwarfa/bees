@@ -1,8 +1,7 @@
 <div class="orderform">
   
-  
-
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGSargdovK3nihoZitV6jsG2MZgVIwFpA&libraries=places&callback=initAutocomplete"
+         async defer></script>
 <%= form_for(order) do |f| %>
   <% if order.errors.any? %>
     <div id="error_explanation">
@@ -16,8 +15,6 @@
     </div>
   <% end %>
 
-
-
   <div class="field">
     <%= f.label :customer_name %>
     <%= f.text_field :customer_name %>
@@ -28,10 +25,12 @@
     <%= f.text_field :customer_number %>
   </div>
 
+ 
   <div class="field">
     <%= f.label :address %>
-    <%= f.text_area :address %>
+    <%= f.text_field :address, id:'pac-input', placeholder:'Search Address'%>
   </div>
+  
 
 <div class="field">
     <%= f.label :order_size %>
